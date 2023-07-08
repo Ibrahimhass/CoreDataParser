@@ -10,7 +10,7 @@ import SWXMLHash
 
 protocol CoreDataDecodable: XMLDecodable, KeyDecodable {}
 
-class CoreDataModelParser {
+public class CoreDataModelParser {
     let xmlParser: XMLHash
     
     public init(detectParsingErrors: Bool = true) {
@@ -53,7 +53,7 @@ class CoreDataModelParser {
 }
 
 
-extension XMLIndexer {
+public extension XMLIndexer {
     var error: CoreDataModelParser.Error? {
         switch self {
         case .parsingError(let error):
