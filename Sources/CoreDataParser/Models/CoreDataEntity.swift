@@ -1,5 +1,5 @@
 //
-//  CoreDataEntitty.swift
+//  CoreDataEntity.swift
 //  CoreDataParser
 //
 //  Created by Ibrahim Hassan on 08/07/23.

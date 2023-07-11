@@ -48,5 +48,3 @@ do {
     print (error)
 }
 ```
-
-

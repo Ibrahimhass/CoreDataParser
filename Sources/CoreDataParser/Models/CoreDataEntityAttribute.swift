@@ -49,6 +49,10 @@ public enum AttributeType: XMLAttributeDecodable, KeyDecodable {
 public struct CoreDataEntityAttribute: CoreDataDecodable {
     public let name: String
     public let optional: Bool
+    public let transient: Bool
+    public let allowsCloudEncryption: Bool
+    public let derived: Bool
+    public let derivationExpression: String?
     public let attributeType: AttributeType?
     public let defaultValueString: String?
     public let usesScalarValueType: Bool?
@@ -59,6 +63,10 @@ public struct CoreDataEntityAttribute: CoreDataDecodable {
         return CoreDataEntityAttribute(
             name: try container.attribute(of: .name),
             optional: container.attributeIfPresent(of: .optional) ?? false,
+            transient: container.attributeIfPresent(of: .transient) ?? false,
+            allowsCloudEncryption: container.attributeIfPresent(of: .allowsCloudEncryption) ?? false,
+            derived: container.attributeIfPresent(of: .derived) ?? false,
+            derivationExpression: container.attributeIfPresent(of: .derivationExpression),
             attributeType: container.attributeIfPresent(of: .attributeType),
             defaultValueString: container.attributeIfPresent(of: .defaultValueString),
             usesScalarValueType: container.attributeIfPresent(of: .usesScalarValueType)
